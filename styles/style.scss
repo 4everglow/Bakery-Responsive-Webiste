@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    text-decoration: none !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    color: #f1f1f1 !important;
+}
+
+section {
+    padding: 50px 0;
+}
+
+.btn {
+    width: 120px;
+    padding: 5px 20px !important;
+    border: 1px solid #c69963 !important;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .3), transparent);
+    transition: all 665ms;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.heading h4 {
+    text-transform: uppercase;
+    color: #101d2c;
+    line-height: 0;
+    font-family: "Teko", sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.heading h1 {
+    font-family: "Niconne", cursive;
+    color: #c69963;
+}
+
+// ------------- HEADER -----------------------
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(16, 29, 44, .95), rgba(16, 29, 44, .9)), url(../assets/header-bg.jpg) center center/cover no-repeat;
+    position: relative;
+    >.container {
+        height: 100%;
+        padding: 0;
+    }
+    .navbar-brand {
+        width: 100%;
+        max-width: 120px;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opcaity 650ms;
+        &:hover {
+            opacity: .8;
+        }
+    }
+    .hamburger-menu {
+        position: fixed;
+        top: 25px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        border-radius: 5px;
+        background: rgb(16, 29, 44);
+        cursor: pointer;
+        z-index: 999;
+        i {
+            font-size: 25px;
+            color: rgba(189, 153, 99, .7);
+            margin: auto;
+            &.fa-times {
+                display: none;
+                &.open {
+                    display: block;
+                }
+            }
+            &.fa-bars {
+                &.close {
+                    display: none;
+                }
+            }
+        }
+    }
+    .nav-list {
+        position: fixed;
+        top: 0;
+        // left: 100%;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: #101d2c;
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 550ms;
+        a {
+            text-transform: uppercase;
+            transition: 666ms;
+            &:hover {
+                color: rgba(189, 153, 99, .9) !important;
+                letter-spacing: 1px;
+            }
+        }
+        &.open {
+            // left: 0;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        h1 {
+            font-family: "Niconne", cursive;
+            color: rgba(189, 153, 99, .7);
+        }
+    }
+}
+
+// ------------- MAIN -------------------------
+//ABOUT
+.about {
+    .btn {
+        color: #c69963 !important;
+        transition: all 650ms;
+        &:hover {
+            background: #c69963;
+            color: white !important;
+        }
+    }
+    .img-fluid {
+        border-radius: 6px;
+    }
+}
+
+//Menu
+.menu {
+    background-color: #101d2c;
+    .container .shop-info {
+        i {
+            color: #c69963;
+            font-size: 50px;
+        }
+        h1 {
+            font-family: "Teko", sans-serif;
+            font-size: 25px;
+            letter-spacing: 1px;
+        }
+        p,
+        address {
+            color: rgba($color: #f1f1f1, $alpha: 0.5);
+        }
+    }
+    hr {
+        border-top: 1px solid rgba($color: #f1f1f1, $alpha: .05);
+    }
+    .container-fluid .heading {
+        h4 {
+            font-family: 'Teko', sans-serif;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-family: "Niconne", cursive;
+            color: #c69963;
+            margin-top: -10px;
+        }
+    }
+    .menu-item {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        img {
+            transform: scale(1);
+            transform-origin: center;
+            transition: 660ms;
+        }
+        .menu-item-desc {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(-10%);
+            transition: 660ms;
+            h6 {
+                padding: 10px;
+                background: url(../assets/brushstroke.png) center center/cover;
+                color: #101d2c;
+                font-weight: bold;
+                font-size: 30px;
+            }
+            h1 {
+                font-family: "Niconne", cursive;
+            }
+        }
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+            &::after {
+                opacity: 1;
+            }
+            .menu-item-desc {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            // top: 50%;
+            top: 0;
+            right: 0;
+            background: rgba($color: #101d2c, $alpha: .9);
+            opacity: 0;
+            transition: 560ms;
+        }
+    }
+}
+
+//CHEF
+.chef {
+    .chef-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h4 {
+            font-size: 30px !important;
+            margin: 10px 0 0;
+            font-family: 'Teko', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+footer {
+    background: #101d2c;
+    color: wheat;
+    margin: 0;
+    span {
+        font-family: "Niconne", cursive;
+        font-size: 25px;
+    }
+}
+
+// --------------- RESPONSIVE --------------------
+// @media (min-width: 576px) {
+//     .navbar-brand {
+//         width: 200px !important;
+//     }
+// }
+@media (min-width: 768px) {
+    .btn {
+        width: 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    header>.container {
+        padding: 0 10px;
+        .navbar-brand {
+            position: initial;
+            transform: initial;
+        }
+        .hamburger-menu {
+            display: none;
+        }
+        .nav-list {
+            position: initial;
+            width: initial;
+            height: initial;
+            background: initial;
+            flex-direction: row;
+            opacity: 1;
+            padding: 0;
+            margin: 0;
+            transform: initial;
+            transition: initial;
+            .nav-item {
+                margin: 0 20px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                .nav-link {
+                    position: relative;
+                    padding: 0;
+                    text-transform: initial;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -4px;
+                        background-color: #c69963;
+                        width: 100%;
+                        height: 3px;
+                        transform: scale(0);
+                        transition: transform .2s;
+                    }
+                    &:hover {
+                        letter-spacing: 0;
+                        &::before {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Teko&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  outline: none;
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  color: #f1f1f1 !important;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.btn {
+  width: 120px;
+  padding: 5px 20px !important;
+  border: 1px solid #c69963 !important;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100% !important;
+  height: 100% !important;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(rgba(255, 255, 255, 0.3)), to(transparent));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  -webkit-transition: all 665ms;
+  transition: all 665ms;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.heading h4 {
+  text-transform: uppercase;
+  color: #101d2c;
+  line-height: 0;
+  font-family: "Teko", sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.heading h1 {
+  font-family: "Niconne", cursive;
+  color: #c69963;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 29, 44, 0.95)), to(rgba(16, 29, 44, 0.9))), url(../assets/header-bg.jpg) center center/cover no-repeat;
+  background: linear-gradient(rgba(16, 29, 44, 0.95), rgba(16, 29, 44, 0.9)), url(../assets/header-bg.jpg) center center/cover no-repeat;
+  position: relative;
+}
+
+header > .container {
+  height: 100%;
+  padding: 0;
+}
+
+header .navbar-brand {
+  width: 100%;
+  max-width: 120px;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opcaity 650ms;
+  transition: opcaity 650ms;
+}
+
+header .navbar-brand:hover {
+  opacity: .8;
+}
+
+header .hamburger-menu {
+  position: fixed;
+  top: 25px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  background: #101d2c;
+  cursor: pointer;
+  z-index: 999;
+}
+
+header .hamburger-menu i {
+  font-size: 25px;
+  color: rgba(189, 153, 99, 0.7);
+  margin: auto;
+}
+
+header .hamburger-menu i.fa-times {
+  display: none;
+}
+
+header .hamburger-menu i.fa-times.open {
+  display: block;
+}
+
+header .hamburger-menu i.fa-bars.close {
+  display: none;
+}
+
+header .nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #101d2c;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity 550ms;
+  transition: opacity 550ms;
+}
+
+header .nav-list a {
+  text-transform: uppercase;
+  -webkit-transition: 666ms;
+  transition: 666ms;
+}
+
+header .nav-list a:hover {
+  color: rgba(189, 153, 99, 0.9) !important;
+  letter-spacing: 1px;
+}
+
+header .nav-list.open {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+header .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+header .hero-text h1 {
+  font-family: "Niconne", cursive;
+  color: rgba(189, 153, 99, 0.7);
+}
+
+.about .btn {
+  color: #c69963 !important;
+  -webkit-transition: all 650ms;
+  transition: all 650ms;
+}
+
+.about .btn:hover {
+  background: #c69963;
+  color: white !important;
+}
+
+.about .img-fluid {
+  border-radius: 6px;
+}
+
+.menu {
+  background-color: #101d2c;
+}
+
+.menu .container .shop-info i {
+  color: #c69963;
+  font-size: 50px;
+}
+
+.menu .container .shop-info h1 {
+  font-family: "Teko", sans-serif;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.menu .container .shop-info p,
+.menu .container .shop-info address {
+  color: rgba(241, 241, 241, 0.5);
+}
+
+.menu hr {
+  border-top: 1px solid rgba(241, 241, 241, 0.05);
+}
+
+.menu .container-fluid .heading h4 {
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+}
+
+.menu .container-fluid .heading h1 {
+  font-family: "Niconne", cursive;
+  color: #c69963;
+  margin-top: -10px;
+}
+
+.menu .menu-item {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu .menu-item img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 660ms;
+  transition: 660ms;
+}
+
+.menu .menu-item .menu-item-desc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 10;
+  opacity: 0;
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+  -webkit-transition: 660ms;
+  transition: 660ms;
+}
+
+.menu .menu-item .menu-item-desc h6 {
+  padding: 10px;
+  background: url(../assets/brushstroke.png) center center/cover;
+  color: #101d2c;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.menu .menu-item .menu-item-desc h1 {
+  font-family: "Niconne", cursive;
+}
+
+.menu .menu-item:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.menu .menu-item:hover::after {
+  opacity: 1;
+}
+
+.menu .menu-item:hover .menu-item-desc {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.menu .menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background: rgba(16, 29, 44, 0.9);
+  opacity: 0;
+  -webkit-transition: 560ms;
+  transition: 560ms;
+}
+
+.chef .chef-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chef .chef-desc h4 {
+  font-size: 30px !important;
+  margin: 10px 0 0;
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer {
+  background: #101d2c;
+  color: wheat;
+  margin: 0;
+}
+
+footer span {
+  font-family: "Niconne", cursive;
+  font-size: 25px;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    width: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  header > .container {
+    padding: 0 10px;
+  }
+  header > .container .navbar-brand {
+    position: initial;
+    -webkit-transform: initial;
+            transform: initial;
+  }
+  header > .container .hamburger-menu {
+    display: none;
+  }
+  header > .container .nav-list {
+    position: initial;
+    width: initial;
+    height: initial;
+    background: initial;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    opacity: 1;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: initial;
+            transform: initial;
+    -webkit-transition: initial;
+    transition: initial;
+  }
+  header > .container .nav-list .nav-item {
+    margin: 0 20px;
+  }
+  header > .container .nav-list .nav-item:last-child {
+    margin-right: 0;
+  }
+  header > .container .nav-list .nav-item .nav-link {
+    position: relative;
+    padding: 0;
+    text-transform: initial;
+  }
+  header > .container .nav-list .nav-item .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    background-color: #c69963;
+    width: 100%;
+    height: 3px;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+  }
+  header > .container .nav-list .nav-item .nav-link:hover {
+    letter-spacing: 0;
+  }
+  header > .container .nav-list .nav-item .nav-link:hover::before {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */
